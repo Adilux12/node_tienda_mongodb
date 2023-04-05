@@ -1,0 +1,68 @@
+@host = http://localhost:3000
+@apiProducts = /api/products
+@apiUsers = /api/user
+
+##### API PRODUCTS ####
+GET {{host}}{{apiProducts}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhNmQ4ZTVlNzQyMmVkYWQ3YWY4Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMDQ3Mjk1LCJpYXQiOjE2ODA2MTUyOTV9.88lyGLIZiPHDsKykqzNB3z3IyM6z9QY6az-yxsJQjYM
+### GetByPrice
+
+GET {{host}}{{apiProducts}}/price/500
+
+###GetByDepartment
+
+GET {{host}}{{apiProducts}}/department/home
+
+###
+
+PUT {{host}}{{apiProducts}}/stock
+
+###
+
+POST {{host}}{{apiProducts}}
+Content-Type: application/json
+
+{
+    "name": "Pantalones azules",
+    "description": "Son de color azul",
+    "price": 29,
+    "department": "man",
+    "available": true,
+    "stock": 8
+}
+
+
+
+##### API USER #### 
+
+### Register
+POST {{host}}{{apiUsers}}/register
+Content-Type: application/json
+
+{
+    "username": "lida",
+    "email": "lida@gmail.com",
+    "password": "123456789",
+    "role": "admin",
+    "active": true
+}
+
+###Login
+
+POST {{host}}{{apiUsers}}/login
+Content-Type: application/json
+
+{  
+    "email": "prueba2@gmail.com",
+    "password": "123456789"
+}
+
+
+###ProductID
+
+GET {{host}}{{apiUsers}}/buy/642b4dbe4ab62b9beb34c09b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhNmQ4ZTVlNzQyMmVkYWQ3YWY4Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMDQ3Mjk1LCJpYXQiOjE2ODA2MTUyOTV9.88lyGLIZiPHDsKykqzNB3z3IyM6z9QY6az-yxsJQjYM
+
+### GetCart From user
+GET {{host}}{{apiUsers}}/cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjQyYmZhNmQ4ZTVlNzQyMmVkYWQ3YWY4Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNjgxMDQ3Mjk1LCJpYXQiOjE2ODA2MTUyOTV9.88lyGLIZiPHDsKykqzNB3z3IyM6z9QY6az-yxsJQjYM
